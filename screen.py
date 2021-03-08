@@ -43,33 +43,14 @@ class profilescreenfour(Screen):
 	def ch_sc (self):
 		switch("menu")
 
-class profilescreenfive(Screen):
+class subscreentwo(Screen):
 	"""
 	
 	"""
 	def ch_sc (self):
 		switch("menu")
 
-class profilescreensix(Screen):
-	"""
-	
-	"""
-	def ch_sc (self):
-		switch("menu")
 
-class profilescreenseven(Screen):
-	"""
-	
-	"""
-	def ch_sc (self):
-		switch("menu")
-
-class profilescreeneight(Screen):
-	"""
-	
-	"""
-	def ch_sc (self):
-		switch("menu")
 
 
 def switch (screen_name):

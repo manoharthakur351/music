@@ -1,13 +1,13 @@
-<subscreenone>
-	name: 'sub1_a'
+<subscreentwo>
+	name: 'sub2_a'
 	NavigationLayout:
 		ScreenManager:
 			Screen:
 				BoxLayout:
 					orientation: 'vertical'
 					MDToolbar:
-						title: app.tit
-						left_action_items: [["arrow-left",lambda x:  root.ch_sc(app.back)]]
+						title:'About'
+						left_action_items: [["arrow-left",lambda x:  root.ch_sc()]]
 					BoxLayout:
 						orientation: 'vertical'
 						ScrollView:
@@ -39,25 +39,8 @@
 												size: 500,500
 												source:'https://docs.google.com/drawings/d/e/2PACX-1vSzVq_NGXDLlYDqlxM0QxRSzhH-XSJC43zYbTRMMrygxxEz_Lti2kKo9XiFHGgYFo-jMYZYV9CAZnQP/pub?w=960&amp;h=720'
 	
-									
-									MDFloatingActionButton:
-										pos:root.width*(8/10),g.height-(f.height+133)
-										md_bg_color:1,1,1,1
-										
-										on_release:
-											if self.icon == 'pause-circle':self.icon='play-circle'
-											else: self.icon='pause-circle'
-											app.pla(app.music)
-											app.mode='playing'
-										icon:"play-circle"
-										#user_font_size: "16sp"
-										theme_text_color: "Custom"
-										text_color:0,.01,1,1
-											
-										
-										
 								MDLabel:
 									markup: True
 									size_hint:1, None
 									size: self.texture_size
-									text:app.lyrics
+									text:app.textit("txt_mat/abt.txt")
