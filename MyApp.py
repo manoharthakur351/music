@@ -66,6 +66,9 @@ class MaiApp (MDApp):
 	music = StringProperty()
 	lyrics = StringProperty('app')
 	def pla (self, music):
+		'''
+		this function's role is to play music
+		'''
 		sound=SoundLoader.load(music)
 		if sound:
 			if self.mode=='stop':

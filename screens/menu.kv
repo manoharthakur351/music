@@ -1,3 +1,5 @@
+#: import wb webbrowser
+#: import ur urls
 <MenuScreen>:
 	name: 'menu'
 	NavigationLayout:
@@ -8,7 +10,7 @@
 					MDToolbar:
 						title: 'LANGUAGES'
 						type: 'top'
-						left_action_items: [['menu',lambda x: nav_drawer.toggle_nav_drawer()]]
+						left_action_items: [['menu',lambda x: nav.set_state('open')]]
 						elevation:5
 					BoxLayout :
 						orientation: 'vertical'				
@@ -43,4 +45,41 @@
 									on_release:
 										app.back='profile3'
 										root.manager.current="profile3"
-								
+		MDNavigationDrawer:
+			id:nav
+			BoxLayout:
+				orientation:'vertical'
+				Image:
+					size_hint:1,.2
+					source:'alphaimg/m.png'
+				MDTextButton:
+					markup: True
+					size_hint:1, None
+					size: self.texture_size
+					text:'MUSIC'
+					on_release:
+						wb.open(ur.kivy)
+				MDSeparator:
+					
+					
+				BoxLayout:
+					orientation:'vertical'
+					size_hint:1,.8
+					ScrollView:
+						MDList:
+							OneLineIconListItem:
+								IconLeftWidget:
+									icon:'github-face'
+							OneLineIconListItem:
+								IconLeftWidget:
+									icon:'instagram'
+							OneLineIconListItem:
+								IconLeftWidget:
+									icon:'language-python'
+							OneLineIconListItem:
+								IconLeftWidget:
+									icon:'kivy'
+							OneLineIconListItem:
+								IconLeftWidget:
+									icon:'more'
+						
