@@ -37,7 +37,7 @@
 												pos_hint: {'center_x': .5, 'center_y': .5}
 												user_font_size: "128sp"
 												size: 500,500
-												source:'https://docs.google.com/drawings/d/e/2PACX-1vRNgzr9Lg5WnD7lb-O0T0lCJUjJz2nK5lLiaEweRIcwmO0AedTh_2xWRkQ5Ap8AEW3fkQLs3sJWpDUd/pub?w=480&h=480'
+												source:'https://docs.google.com/drawings/d/e/2PACX-1vSzVq_NGXDLlYDqlxM0QxRSzhH-XSJC43zYbTRMMrygxxEz_Lti2kKo9XiFHGgYFo-jMYZYV9CAZnQP/pub?w=960&amp;h=720'
 	
 									
 									MDFloatingActionButton:
@@ -45,8 +45,10 @@
 										md_bg_color:1,1,1,1
 										
 										on_release:
-											self.icon = 'pause-circle'
+											if self.icon == 'pause-circle':self.icon='play-circle'
+											else: self.icon='pause-circle'
 											app.pla(app.music)
+											app.mode='playing'
 										icon:"play-circle"
 										#user_font_size: "16sp"
 										theme_text_color: "Custom"

@@ -60,6 +60,7 @@ class Manager(ScreenManager):
 #________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 class MaiApp (MDApp):
 	load()
+	mode= StringProperty('stop')
 	back=StringProperty()
 	tit = StringProperty()
 	music = StringProperty()
@@ -67,7 +68,12 @@ class MaiApp (MDApp):
 	def pla (self, music):
 		sound=SoundLoader.load(music)
 		if sound:
-			sound.play()
+			if self.mode=='stop':
+				sound.play()
+			else:
+				sound.volume = 0
+				sound.stop()
+			
 	def textit (self,path):
 		"""
 		this function is to load and display text
