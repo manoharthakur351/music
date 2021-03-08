@@ -1,0 +1,120 @@
+# OTHER LANGUAGES LEVEL 2 SCREEN
+<profilescreenthree>:
+	name: 'profile3'
+	NavigationLayout:
+		ScreenManager:
+			Screen:
+				BoxLayout:
+					orientation: 'vertical'
+					MDToolbar:
+						title: 'OTHER LANGUAGES'
+						left_action_items: [["arrow-left",lambda x:  root.ch_sc()]]
+					BoxLayout:
+						orientation: 'vertical'
+						ScrollView:
+							GridLayout:
+								cols: 1
+								height: self.minimum_height
+								size_hint_y: None
+								MDList:
+									TwoLineAvatarIconListItem:
+										text:"TAKI TAKI"
+										font_style: 'H6'
+										on_release:
+											app.tit = self.text
+											app.lyrics = app.textit("txt_mat/oth/taki.txt")
+											app.music = 'aud/h/barbaad.mp3'
+											root.manager.current="sub1_a"
+										secondary_text: " DJ Snake"
+										ImageLeftWidget:
+											source:"alphaimg/i.ico"
+									
+									TwoLineAvatarIconListItem:
+										text:"HAWAI"
+										font_style: 'H6'
+										on_release:
+											app.tit = self.text
+											app.lyrics = app.textit("txt_mat/oth/hawai.txt")
+											root.manager.current="sub1_a"
+										secondary_text: "Maluma"
+										ImageLeftWidget:
+											source:"alphaimg/i.ico"
+									
+									TwoLineAvatarIconListItem:
+										text:"ROPA CARA"
+										font_style: 'H6'
+										on_release:
+											app.tit = self.text
+											app.lyrics = app.textit("txt_mat/oth/ropa.txt")
+											root.manager.current="sub1_a"
+										secondary_text: "CAMELIO"
+										ImageLeftWidget:
+											source:"alphaimg/i.ico"
+									
+									TwoLineAvatarIconListItem:
+										text:"DESPACITO"
+										font_style: 'H6'
+										on_release:
+											app.tit = self.text
+											app.lyrics = app.textit("txt_mat/oth/despacito.txt")
+											root.manager.current="sub1_a"
+										secondary_text: "Luis Fonsi"
+										ImageLeftWidget:
+											source:"alphaimg/i.ico"
+									
+									TwoLineAvatarIconListItem:
+										text:"DURA"
+										font_style: 'H6'
+										on_release:
+											app.tit = self.text
+											app.lyrics = app.textit("txt_mat/oth/dura.txt")
+											root.manager.current="sub1_a"
+										secondary_text: "Daddy Yankee"
+										ImageLeftWidget:
+											source:"alphaimg/i.ico"
+									
+									TwoLineAvatarIconListItem:
+										text:"ECHAME LA CULPA"
+										font_style: 'H6'
+										on_release:
+											app.tit = self.text
+											app.lyrics = app.textit("txt_mat/oth/echame.txt")
+											root.manager.current="sub1_a"
+										secondary_text: "DEMI LOVATO AND LUIS FONSI"
+										ImageLeftWidget:
+											source:"alphaimg/i.ico"
+									
+									TwoLineAvatarIconListItem:
+										text:" "
+										font_style: 'H6'
+										on_release:
+											app.tit = self.text
+											app.lyrics = app.textit("txt_mat/oth/daddy.txt")
+											root.manager.current="sub1_a"
+										secondary_text: "Daddy yankee and katy perry"
+										ImageLeftWidget:
+											source:"alphaimg/i.ico"
+									
+									TwoLineAvatarIconListItem:
+										text:"SHAKY SHAKY"
+										font_style: 'H6'
+										on_release:
+											app.tit = self.text
+											app.lyrics = app.textit("txt_mat/oth/shaky.txt")
+											root.manager.current="sub1_a"
+										secondary_text: "Daddy Yankee"
+										ImageLeftWidget:
+											source:"alphaimg/i.ico"
+									
+									TwoLineAvatarIconListItem:
+										text:"DESPACITO"
+										font_style: 'H6'
+										on_release:
+											app.tit = self.text
+											app.lyrics = app.textit("txt_mat/oth/despacito.txt")
+											root.manager.current="sub1_a"
+										secondary_text: "Luis Fonsi"
+										ImageLeftWidget:
+											source:"alphaimg/i.ico"
+									
+									

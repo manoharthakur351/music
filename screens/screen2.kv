@@ -1,0 +1,121 @@
+# HINDI LEVEL 2 SCREEN
+<profilescreentwo>:
+	name: 'profile2'
+	NavigationLayout:
+		ScreenManager:
+			Screen:
+				BoxLayout:
+					orientation: 'vertical'
+					MDToolbar:
+						title: 'HINDI'
+						left_action_items: [["arrow-left",lambda x:  root.ch_sc()]]
+					BoxLayout:
+						orientation: 'vertical'
+						ScrollView:
+							GridLayout:
+								cols: 1
+								height: self.minimum_height
+								size_hint_y: None
+								MDList:
+									TwoLineAvatarIconListItem:
+										text:"AABAD BARBAD"
+										font_style: 'H6'
+										on_release:
+											app.tit = self.text
+											app.music = 'aud/h/barbaad.mp3'
+											app.lyrics = app.textit("txt_mat/hin/abaad.txt")
+											root.manager.current="sub1_a"
+										secondary_text: " "
+										ImageLeftWidget:
+											source:"alphaimg/i.ico"
+									
+									TwoLineAvatarIconListItem:
+										text:"EK LADKI KO DEKHA"
+										font_style: 'H6'
+										on_release:
+											app.tit = self.text
+											app.lyrics = app.textit("txt_mat/hin/elkd.txt")
+											root.manager.current="sub1_a"
+										secondary_text: " "
+										ImageLeftWidget:
+											source:"alphaimg/i.ico"
+									
+									TwoLineAvatarIconListItem:
+										text:"GARMI"
+										font_style: 'H6'
+										on_release:
+											app.tit = self.text
+											app.lyrics = app.textit("txt_mat/hin/garmi.txt")
+											root.manager.current="sub1_a"
+										secondary_text: "Neha Kakkar, Badshah, Varun Dhawan"
+										ImageLeftWidget:
+											source:"alphaimg/i.ico"
+									
+									TwoLineAvatarIconListItem:
+										text:"HAWA BANKE"
+										font_style: 'H6'
+										on_release:
+											app.tit = self.text
+											app.lyrics = app.textit("txt_mat/hin/hb.txt")
+											root.manager.current="sub1_a"
+										secondary_text: "Darshan Raval"
+										ImageLeftWidget:
+											source:"alphaimg/i.ico"
+									
+									TwoLineAvatarIconListItem:
+										text:"JAB KOI BAAT BIGAD JAYE"
+										font_style: 'H6'
+										on_release:
+											app.tit = self.text
+											app.lyrics = app.textit("txt_mat/hin/jkbbj.txt")
+											root.manager.current="sub1_a"
+										secondary_text: " "
+										ImageLeftWidget:
+											source:"alphaimg/i.ico"
+									
+									TwoLineAvatarIconListItem:
+										text:"LAG JA GALE"
+										font_style: 'H6'
+										on_release:
+											app.tit = self.text
+											app.lyrics = app.textit("txt_mat/hin/ljg.txt")
+											root.manager.current="sub1_a"
+										secondary_text: "Lata Mangeshkar"
+										ImageLeftWidget:
+											source:"alphaimg/i.ico"
+									
+									TwoLineAvatarIconListItem:
+										text:"LUT GAYE"
+										font_style: 'H6'
+										on_release:
+											app.tit = self.text
+											app.lyrics = app.textit("txt_mat/hin/lut.txt")
+											root.manager.current="sub1_a"
+										secondary_text: "Jubin Nautiyal"
+										ImageLeftWidget:
+											source:"alphaimg/i.ico"
+									
+									TwoLineAvatarIconListItem:
+										text:"MACHAYENGE"
+										font_style: 'H6'
+										on_release:
+											app.music='aud/h/machayenge.mp3'
+											app.tit = self.text
+											app.lyrics = app.textit("txt_mat/hin/mchg.txt")
+											root.manager.current="sub1_a"
+										secondary_text: "Emiway bantai"
+										ImageLeftWidget:
+											source:"alphaimg/i.ico"
+									
+									TwoLineAvatarIconListItem:
+										text:"MERA DIL BHI KITNA PAHAL HAI"
+										font_style: 'H6'
+										on_release:
+											app.tit = self.text
+											app.lyrics = app.textit("txt_mat/hin/mdbkph.txt")
+											root.manager.current="sub1_a"
+										secondary_text: ""
+										ImageLeftWidget:
+											source:"alphaimg/i.ico"
+									
+									

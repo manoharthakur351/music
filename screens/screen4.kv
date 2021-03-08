@@ -1,0 +1,82 @@
+<profilescreenfour>:
+	name: 'profile4'
+	NavigationLayout:
+		ScreenManager:
+			Screen:
+				BoxLayout:
+					orientation: 'vertical'
+					MDToolbar:
+						title: 'introduction'
+						left_action_items: [["arrow-left",lambda x:  root.ch_sc()]]
+					BoxLayout:
+						orientation: 'vertical'
+						ScrollView:
+							GridLayout:
+								cols: 1
+								height: self.minimum_height
+								size_hint_y: None
+								MDList:
+									ThreeLineAvatarIconListItem:
+										text:"Python Functions"
+										font_style: 'H6'
+										on_release:root.manager.current="profile3"
+										secondary_text: "you con download"
+										tertiary_text:"Python from python.org"
+										IconLeftWidget:
+											icon:"arrow-up-circle"
+									ThreeLineAvatarIconListItem:
+										text:"Function Argument"
+										font_style: 'H6'
+										on_release:root.manager.current="profile3"
+										secondary_text: "you con download"
+										tertiary_text:"Python from python.org"
+										IconLeftWidget:
+											icon:"arrow-up-circle"
+									ThreeLineAvatarIconListItem:
+										text:"Python Recursion"
+										font_style: 'H6'
+										on_release:root.manager.current="profile3"
+										secondary_text: "you con download"
+										tertiary_text:"Python from python.org"
+										IconLeftWidget:
+											icon:"arrow-up-circle"
+									ThreeLineAvatarIconListItem:
+										text:"Anonymous Function"
+										font_style: 'H6'
+										on_release:root.manager.current="profile3"
+										secondary_text: "you con download"
+										tertiary_text:"Python from python.org"
+										IconLeftWidget:
+											icon:"arrow-up-circle"
+									ThreeLineAvatarIconListItem:
+										text:"Global Local and Nonlocal"
+										font_style: 'H6'
+										on_release:root.manager.current="profile3"
+										secondary_text: "you con download"
+										tertiary_text:"Python from python.org"
+										IconLeftWidget:
+											icon:"arrow-up-circle"
+									ThreeLineAvatarIconListItem:
+										text:"Python Global Keyword"
+										font_style: 'H6'
+										on_release:root.manager.current="profile3"
+										secondary_text: "you con download"
+										tertiary_text:"Python from python.org"
+										IconLeftWidget:
+											icon:"arrow-up-circle"
+									ThreeLineAvatarIconListItem:
+										text:"Python Modules"
+										font_style: 'H6'
+										on_release:root.manager.current="profile3"
+										secondary_text: "you con download"
+										tertiary_text:"Python from python.org"
+										IconLeftWidget:
+											icon:"arrow-up-circle"
+									ThreeLineAvatarIconListItem:
+										text:"Python Packages"
+										font_style: 'H6'
+										on_release:root.manager.current="profile3"
+										secondary_text: "you con download"
+										tertiary_text:"Python from python.org"
+										IconLeftWidget:
+											icon:"arrow-up-circle"												

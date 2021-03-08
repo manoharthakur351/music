@@ -1,0 +1,61 @@
+<subscreenone>
+	name: 'sub1_a'
+	NavigationLayout:
+		ScreenManager:
+			Screen:
+				BoxLayout:
+					orientation: 'vertical'
+					MDToolbar:
+						title: app.tit
+						left_action_items: [["arrow-left",lambda x:  root.ch_sc(app.back)]]
+					BoxLayout:
+						orientation: 'vertical'
+						ScrollView:
+							GridLayout:
+								id:g
+								halign:'left'
+								padding: 25
+								spacing: 100
+								cols:1
+								height: self.minimum_height
+								size_hint_y: None
+								FloatLayout:
+									id:f
+									orientation:'vertical'
+									size_hint_y: None
+									size: root.width,root.height/3
+									MDCard:
+										elevation:7
+										pos_hint: {'center_x': .5, 'center_y': .5}				
+										size_hint: None,None
+										size: root.width-50,(root.height/3)+70
+										SmartTile:
+											box_color:0,0,0,0
+											on_release:
+												print("tile released")
+											AsyncImage:
+												pos_hint: {'center_x': .5, 'center_y': .5}
+												user_font_size: "128sp"
+												size: 500,500
+												source:'https://docs.google.com/drawings/d/e/2PACX-1vRNgzr9Lg5WnD7lb-O0T0lCJUjJz2nK5lLiaEweRIcwmO0AedTh_2xWRkQ5Ap8AEW3fkQLs3sJWpDUd/pub?w=480&h=480'
+	
+									
+									MDFloatingActionButton:
+										pos:800,g.height-(f.height+133)
+										md_bg_color:1,1,1,1
+										
+										on_release:
+											self.icon = 'pause-circle'
+											app.pla(app.music)
+										icon:"play-circle"
+										#user_font_size: "16sp"
+										theme_text_color: "Custom"
+										text_color:0,.01,1,1
+											
+										
+										
+								MDLabel:
+									markup: True
+									size_hint:1, None
+									size: self.texture_size
+									text:app.lyrics
