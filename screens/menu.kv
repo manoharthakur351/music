@@ -71,15 +71,24 @@
 								IconLeftWidget:
 									icon:'github-face'
 							OneLineIconListItem:
+								text:'instagram'
+								on_release:
+									root.manager.current="sub2_a"
+									print('instagram')
 								IconLeftWidget:
 									icon:'instagram'
 							OneLineIconListItem:
+								on_release:wb.open(ur.pythonorg)
 								IconLeftWidget:
 									icon:'language-python'
 							OneLineIconListItem:
+								text:'refferances'
 								IconLeftWidget:
-									icon:'kivy'
+									icon:'web'
 							OneLineIconListItem:
+								text:'collaborators'
+								on_release:
+									app.collab()
 								IconLeftWidget:
 									icon:'more'
 						

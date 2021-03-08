@@ -59,6 +59,7 @@ class Manager(ScreenManager):
 # MAIN APP CLASS
 #________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 class MaiApp (MDApp):
+	dialog = None
 	load()
 	mode= StringProperty('stop')
 	back=StringProperty()
@@ -85,6 +86,22 @@ class MaiApp (MDApp):
 		file = open(path)
 		txt = file.read()
 		return txt
+
+	def show_alert_dialog(self):
+		if not self.dialog:
+			self.dialog = MDDialog(
+				text="Discard draft?",
+				buttons=[
+					MDFlatButton(
+						text="CANCEL", text_color=self.theme_cls.primary_color
+					),
+					MDFlatButton(
+						text="DISCARD", text_color=self.theme_cls.primary_color
+					),
+				],
+			)
+		self.dialog.open()
+
 	
 	def build(self):
 		scrman = Manager()
