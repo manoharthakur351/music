@@ -1,9 +1,11 @@
+# importing installed modules
 import os
 import logging
 import kivymd
 import PIL
 import webbrowser as wb
 import random
+# KIVY AND KIVYMD MODULES.
 from kivy.core.audio import SoundLoader
 from kivy.properties import StringProperty
 from kivy.lang.builder import Builder
@@ -22,18 +24,17 @@ from kivymd.uix.dialog import MDDialog
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.expansionpanel import MDExpansionPanel, MDExpansionPanelThreeLine
 from kivymd.app import MDApp
+# import my own modules
+from urls import *		# module having link of websites.  
+from screen import *		# modules having screen classes.
+from lyout import *		# modules having layout classes
 
-	
-from urls import *
-from screen import *
-from lyout import *
-
-
-def load_sub1 ():
-	Builder.load_file("screens/sub1/sub1_a.kv")
-	
 
 def load ():
+	"""
+	function to load all kivy files
+	"""
+	Builder.load_file("screens/sub1/sub1_a.kv")
 	Builder.load_file(os.path.join("main.kv"))
 	Builder.load_file("layout.kv")
 	Builder.load_file("screens/menu.kv")
@@ -41,15 +42,13 @@ def load ():
 	Builder.load_file("screens/screen2.kv")
 	Builder.load_file("screens/screen3.kv")
 	Builder.load_file("screens/sub1/abt.kv")
-	load_sub1()
 	
-	
-	
-	
-
-
 	
 class Manager(ScreenManager):
+	'''
+	root widget of main kivy file.
+	that's ScreenManager.
+	'''
 	pass
 
 # SCREEN(S)
@@ -62,13 +61,20 @@ class Manager(ScreenManager):
 # MAIN APP CLASS
 #________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 class MaiApp (MDApp):
+	# dialugue box
 	dialog = None
 	load()
 	mode= StringProperty('stop')
+	# name of screen p1,,p2,p3.
 	back=StringProperty()
+	# title of the song on toolbar.
 	tit = StringProperty()
+	# path of music files.
 	music = StringProperty()
+	# path of text files.
 	lyrics = StringProperty('app')
+	# links of Google drawings images
+	imag = StringProperty()
 	def pla (self, music):
 		'''
 		this function's role is to play music
@@ -113,6 +119,9 @@ class MaiApp (MDApp):
 
 	
 	def build(self):
+		'''
+		overriding build function
+		'''
 		scrman = Manager()
 		return Manager()
 
