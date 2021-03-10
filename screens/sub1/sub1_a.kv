@@ -38,8 +38,21 @@
 												#user_font_size: "128sp"
 												#size: 500,500
 												source:app.imag
-	
+								
+									MDIconButton:
+										pos:root.width*(5/10),g.height-(f.height+380)
+										md_bg_color:0,0,0,0
+										#size_hint:.2,.35
+										on_release:
+											if self.icon == 'pause-circle':self.icon='play-circle';app.stp()
+											else: self.icon='pause-circle';app.pla(app.music)
+											
+										icon:"play-circle"
+										user_font_size: "64sp"
+										theme_text_color: "Custom"
+										text_color:0,.5,.7,1
 									
+								
 								MDLabel:
 									markup: True
 									size_hint:1, None
