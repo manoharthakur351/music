@@ -9,6 +9,7 @@ import time
 # KIVY AND KIVYMD MODULES.
 from kivy.core.audio import SoundLoader ,Sound
 from kivy.properties import StringProperty
+from kivy.properties import NumericProperty
 from kivy.lang.builder import Builder
 from kivy.uix.videoplayer import VideoPlayer
 from kivy.uix.boxlayout import BoxLayout
@@ -78,6 +79,8 @@ class MaiApp (MDApp):
 	lyrics = StringProperty('app')
 	# links of Google drawings images
 	imag = StringProperty()
+	# progress bar
+	progres = NumericProperty(70)
 	def stp (self):
 		global sound
 		sound.stop()
@@ -120,7 +123,8 @@ class MaiApp (MDApp):
 			)
 		self.dialog.open()
 
-	
+	def start_progress (self):
+		pass
 	def build(self):
 		'''
 		overriding build function
