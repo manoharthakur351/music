@@ -122,8 +122,7 @@ class MaiApp (MDApp):
 			)
 		self.dialog.open()
 
-	def start_progress (self):
-		pass
+	
 	def build(self):
 		'''
 		overriding build function
