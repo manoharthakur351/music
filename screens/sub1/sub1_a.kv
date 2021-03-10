@@ -23,7 +23,7 @@
 									id:f
 									orientation:'vertical'
 									size_hint_y: None
-									size: root.width,root.height/3
+									size: root.width,(root.height/3)+90
 									MDCard:
 										elevation:7
 										pos_hint: {'center_x': .5, 'center_y': .5}				
@@ -40,25 +40,31 @@
 												source:app.imag
 								
 								MDBoxLayout:
+									spacing:25
+									padding:50
 									orientation: 'vertical'
 									size_hint:1,None
 									adaptive_height: True
 									pos_hint: {'center_x': .5, 'center_y': .5}
 									MDProgressBar:
 										id: progress
-										value:app.progres
+										value:10
+										opacity:1
 										type: "determinate"
 									    running_duration: 1
 									    catching_duration: 1.5
 									MDIconButton:
 										id:pp
+										size_hint:None,None
+										height:100
+										size: self.width,50
 										pos_hint: {'center_x': .5, 'center_y': .5}
 										pos:root.width*(5/10),g.height-(f.height+380)
 										on_release:
-											if self.icon == 'pause-circle':self.icon='play-circle';app.stp(); progress.value=0
-											else: self.icon='pause-circle';app.pla(app.music);app.start_progress
-										icon:"play-circle"
-										user_font_size: "64sp"
+											if self.icon == 'alphaimg/pause.png':self.icon='alphaimg/play.png';app.stp(); progress.value=0
+											else: self.icon='alphaimg/pause.png';app.pla(app.music);progress.value=50
+										icon:"alphaimg/play.png"
+										user_font_size: "16sp"
 										theme_text_color: "Custom"
 										text_color:1,.5,.7,1
 									
