@@ -15,7 +15,7 @@
 								id:g
 								halign:'left'
 								padding: 25
-								spacing: 100
+								spacing: 50
 								cols:1
 								height: self.minimum_height
 								size_hint_y: None
@@ -38,8 +38,31 @@
 												#user_font_size: "128sp"
 												#size: 500,500
 												source:app.imag
-	
+								
+								MDBoxLayout:
+									orientation: 'vertical'
+									size_hint:1,None
+									adaptive_height: True
+									pos_hint: {'center_x': .5, 'center_y': .5}
+									MDProgressBar:
+										id: progress
+										value:app.progres
+										type: "determinate"
+									    running_duration: 1
+									    catching_duration: 1.5
+									MDIconButton:
+										id:pp
+										pos_hint: {'center_x': .5, 'center_y': .5}
+										pos:root.width*(5/10),g.height-(f.height+380)
+										on_release:
+											if self.icon == 'pause-circle':self.icon='play-circle';app.stp(); progress.value=0
+											else: self.icon='pause-circle';app.pla(app.music);app.start_progress
+										icon:"play-circle"
+										user_font_size: "64sp"
+										theme_text_color: "Custom"
+										text_color:1,.5,.7,1
 									
+								
 								MDLabel:
 									markup: True
 									size_hint:1, None
