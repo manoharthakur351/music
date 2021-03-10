@@ -68,7 +68,6 @@ class MaiApp (MDApp):
 	dialog = None
 	# loader
 	load()
-	mode= StringProperty('s')
 	# name of screen p1,,p2,p3.
 	back=StringProperty()
 	# title of the song on toolbar.
@@ -76,7 +75,7 @@ class MaiApp (MDApp):
 	# path of music files.
 	music = StringProperty()
 	# path of text files.
-	lyrics = StringProperty('app')
+	lyrics = StringProperty()
 	# links of Google drawings images
 	imag = StringProperty()
 	# progress bar
