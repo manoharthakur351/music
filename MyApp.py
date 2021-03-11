@@ -7,6 +7,7 @@ import webbrowser as wb
 import random
 import time
 # KIVY AND KIVYMD MODULES.
+from kivy.clock import Clock
 from kivy.core.audio import SoundLoader ,Sound
 from kivy.properties import StringProperty
 from kivy.properties import NumericProperty
@@ -60,6 +61,9 @@ class Manager(ScreenManager):
 class Song (SoundLoader):
 	pass
 
+def prog (dt):
+	#MaiApp.get_running_app().root.ids.progress.value=1
+	pass
 
 # MAIN APP CLASS
 #________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
@@ -127,6 +131,7 @@ class MaiApp (MDApp):
 		'''
 		overriding build function
 		'''
+		Clock.schedule_interval(prog,1)
 		scrman = Manager()
 		return Manager()
 
