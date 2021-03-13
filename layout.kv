@@ -8,11 +8,19 @@
 	#md_bg_color: app.theme_cls.primary_color
 
 <songitem@TwoLineAvatarIconListItem>:
-	text:'no strategy yet'
+	text:'no data no song'
+	font_style: 'H6'
+	secondary_text: "singer name nt found"
 	bg_color:0,0,0,1
+	theme_text_color:'Custom'
+	text_color:1,1,1,1
+	secondary_theme_text_color:'Custom'
+	secondary_text_color:1,1,1,1
+	on_release:
+		app.get_running_app().root.current='sub1_a'
 	ImageLeftWidget:
-		md_bg_color:0,0,0,1
 		source:"alphaimg/music_item_icon.png"
+	
 
 
 
