@@ -7,44 +7,18 @@
 	orientation:"vertical"
 	#md_bg_color: app.theme_cls.primary_color
 
+<songitem@TwoLineAvatarIconListItem>:
+	text:'no strategy yet'
+	bg_color:0,0,0,1
+	ImageLeftWidget:
+		md_bg_color:0,0,0,1
+		source:"alphaimg/music_item_icon.png"
 
 
-<Navigation>:
-	Vbox:
-		Vbox:
-			md_bg_color: app.theme_cls.primary_color
-			size_hint_y:.2
-			Image:
-				source:"alphaimg/n.png"
-		Vbox:
-			md_bg_color: 1,1,1,.3
-			padding:50,10
-			size_hint_y:.1
-			
-			MDLabel:
-				text:"MDLabel@gmail.com"
-				font_style:"H6"
-		MDSeparator:
-		Vbox:
-			size_hint_y:.7
-			ScrollView:
-				MDList:
-					OneLineIconListItem:
-						text:"Settings"
-						IconLeftWidget:
-							icon:"settings-outline"
-					OneLineIconListItem:
-						text:"About"
-						IconLeftWidget:
-							icon:"alpha-a-circle-outline"
-					OneLineIconListItem:
-						text:"Github"
-						on_release:app.web(ur.we.github)
-						IconLeftWidget:
-							icon:"github-face"
-					
-					
+
 <Card>:
 	pos_hint: {'center_x': .5, 'center_y': .5}
 	size_hint: None,None
 	size: root.width-100,1000
+	
+	

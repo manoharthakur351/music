@@ -32,7 +32,8 @@ from urls import *		# module having link of websites.
 from screen import *		# modules having screen classes.
 #from lyout import *		# modules having layout classes
 
-
+logging.basicConfig(level=logging.DEBUG)
+logging.info('======app started======')
 def load ():
 	"""
 	function to load all kivy files
@@ -46,7 +47,7 @@ def load ():
 	Builder.load_file("screens/screen2.kv")
 	Builder.load_file("screens/screen3.kv")
 	Builder.load_file("screens/sub1/abt.kv")
-	
+	logging.info('all files loaded')
 	
 class Manager(ScreenManager):
 	'''
@@ -132,6 +133,9 @@ class MaiApp (MDApp):
 		overriding build function
 		'''
 		Clock.schedule_interval(prog,1)
+		print(self.theme_cls.text_color)
+		self.theme_cls.primary_palette = "Teal"
+		self.theme_cls.primary_hue = '400'
 		scrman = Manager()
 		return Manager()
 
