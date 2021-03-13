@@ -6,7 +6,7 @@
 				BoxLayout:
 					orientation: 'vertical'
 					MDToolbar:
-						title: app.tit
+						title: app.one_item[0]
 						left_action_items: [["arrow-left",lambda x:  root.ch_sc(app.back)]]
 					BoxLayout:
 						orientation: 'vertical'
@@ -37,7 +37,7 @@
 												pos_hint: {'center_x': .5, 'center_y': .5}
 												#user_font_size: "128sp"
 												#size: 500,500
-												source:app.imag
+												source:'alphaimg/thumbnail.jpeg'
 								
 								MDBoxLayout:
 									spacing:25
@@ -62,7 +62,7 @@
 										pos:root.width*(5/10),g.height-(f.height+380)
 										on_release:
 											if self.icon == 'alphaimg/pause.png':self.icon='alphaimg/play.png';app.stp(); progress.value=0
-											else: self.icon='alphaimg/pause.png';app.pla(app.music);progress.value=50
+											else: self.icon='alphaimg/pause.png';app.pla(app.one_item[3]);progress.value=50
 										icon:"alphaimg/play.png"
 										user_font_size: "16sp"
 										theme_text_color: "Custom"
@@ -73,4 +73,4 @@
 									markup: True
 									size_hint:1, None
 									size: self.texture_size
-									text:app.lyrics
+									text:app.textit(app.one_item[4])

@@ -11,6 +11,7 @@ from kivy.clock import Clock
 from kivy.core.audio import SoundLoader ,Sound
 from kivy.properties import StringProperty
 from kivy.properties import NumericProperty
+from kivy.properties import ListProperty
 from kivy.lang.builder import Builder
 from kivy.uix.videoplayer import VideoPlayer
 from kivy.uix.boxlayout import BoxLayout
@@ -30,6 +31,7 @@ from kivymd.app import MDApp
 # import my own modules
 from urls import *		# module having link of websites.  
 from screen import *		# modules having screen classes.
+from album import english_album
 #from lyout import *		# modules having layout classes
 
 
@@ -68,6 +70,9 @@ def prog (dt):
 # MAIN APP CLASS
 #________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 class MaiApp (MDApp):
+	# data of all frame work
+	one_item = ListProperty(english_album[1])
+	
 	# dialugue box
 	dialog = None
 	# loader
@@ -84,6 +89,10 @@ class MaiApp (MDApp):
 	imag = StringProperty()
 	# progress bar
 	progres = NumericProperty(70)
+	def change_stuff(self,tupl):
+		
+		self.one_item = english_album[tupl]
+		pass
 	def stp (self):
 		global sound
 		sound.stop()
