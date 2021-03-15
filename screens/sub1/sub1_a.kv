@@ -30,14 +30,17 @@
 										size_hint: None,None
 										size: root.width-50,(root.height/3)+70
 										SmartTile:
+											id:it
 											box_color:0,0,0,0
 											on_release:
 												print("tile released")
 											Image:
 												pos_hint: {'center_x': .5, 'center_y': .5}
-												#user_font_size: "128sp"
-												#size: 500,500
+												size_hint: None, None
+												size:it.size
 												source:app.imag
+												allow_stretch: True
+            									keep_ratio: False
 								
 								MDBoxLayout:
 									spacing:25
@@ -46,28 +49,43 @@
 									size_hint:1,None
 									adaptive_height: True
 									pos_hint: {'center_x': .5, 'center_y': .5}
-									MDProgressBar:
-										id: progress
-										value:10
-										opacity:1
-										type: "determinate"
-									    running_duration: 1
-									    catching_duration: 1.5
-									MDIconButton:
-										id:pp
-										size_hint:None,None
-										height:100
-										size: self.width,50
-										pos_hint: {'center_x': .5, 'center_y': .5}
-										pos:root.width*(5/10),g.height-(f.height+380)
-										on_release:
-											if self.icon == 'alphaimg/pause.png':self.icon='alphaimg/play.png';app.stp(); progress.value=0
-											else: self.icon='alphaimg/pause.png';app.pla(app.music);progress.value=50
-										icon:"alphaimg/play.png"
-										user_font_size: "16sp"
-										theme_text_color: "Custom"
-										text_color:1,.5,.7,1
-									
+									#MDProgressBar:
+#										id: progress
+#										value:10
+#										opacity:
+#										type: "determinate"
+#									    running_duration: 1
+#									    catching_duration: 1.5
+									MDBoxLayout:
+										id:controls
+										adaptive_height: True
+										md_bg_color:0,0,1,0
+										MDIconButton:
+											size_hint:1,1
+											pos_hint: {'center_x': .5, 'center_y': .5}
+											opacity:0
+										MDIconButton:
+											id:pp
+											size_hint:None,None
+											height:100
+											size: self.width,50
+											pos_hint: {'center_x': .5, 'center_y': .5}
+											pos:0,0
+											on_release:
+												if self.icon == 'alphaimg/pause.png':self.icon='alphaimg/play.png';app.stp(); progress.value=0
+												else: self.icon='alphaimg/pause.png';app.pla(app.music);progress.value=50
+											icon:"alphaimg/play.png"
+											user_font_size: "16sp"
+											theme_text_color: "Custom"
+											text_color:1,.5,.7,1
+										MDIconButton:
+											opacity:0
+											size_hint:1,1
+											on_press:
+												print(controls.width)
+												print(root.width)
+												print(self.pos,pp.pos)
+											pos_hint: {'center_x': .75, 'center_y': .5}
 								
 								MDLabel:
 									markup: True
